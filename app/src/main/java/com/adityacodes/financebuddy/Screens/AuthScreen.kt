@@ -1,5 +1,6 @@
 package com.adityacodes.financebuddy.Screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -21,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import com.adityacodes.financebuddy.viewmodels.AuthState
@@ -47,71 +49,92 @@ fun AuthScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(Color(0xFFE7F4F7))
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(
-            text = "Finance AI Assistant",
-            style = MaterialTheme.typography.headlineMedium,
-            modifier = Modifier.padding(bottom = 32.dp)
-        )
-
-        OutlinedTextField(
-            value = email,
-            onValueChange = { email = it },
-            label = { Text("Email") },
-            modifier = Modifier.fillMaxWidth()
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        OutlinedTextField(
-            value = password,
-            onValueChange = { password = it },
-            label = { Text("Password") },
-            visualTransformation = PasswordVisualTransformation(),
-            modifier = Modifier.fillMaxWidth()
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        androidx.compose.material3.Button(
-            onClick = {
-                if (isLogin) {
-                    authViewModel.signIn(email, password)
-                } else {
-                    authViewModel.signUp(email, password)
-                }
-            },
-            modifier = Modifier.fillMaxWidth(),
-            enabled = authState !is AuthState.Loading
-        ) {
-            if (authState is AuthState.Loading) {
-                CircularProgressIndicator(modifier = Modifier.size(20.dp))
-            } else {
-                Text(if (isLogin) "Sign In" else "Sign Up")
-            }
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        TextButton(
-            onClick = { isLogin = !isLogin }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+                .background(
+                    color = MaterialTheme.colorScheme.surface,
+                    shape = MaterialTheme.shapes.large
+                )
+                .padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                if (isLogin) "Don't have an account? Sign Up"
-                else "Already have an account? Sign In"
+                text = "Finance AI Assistant",
+                style = MaterialTheme.typography.headlineMedium,
+                color = Color(0xFF41B8C9),
+                modifier = Modifier.padding(bottom = 24.dp)
             )
-        }
 
-        errorMessage?.let { error ->
+            OutlinedTextField(
+                value = email,
+                onValueChange = { email = it },
+                label = { Text("Email") },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth()
+            )
+
             Spacer(modifier = Modifier.height(16.dp))
-            Text(
-                text = error,
-                color = MaterialTheme.colorScheme.error,
-                style = MaterialTheme.typography.bodySmall
+
+            OutlinedTextField(
+                value = password,
+                onValueChange = { password = it },
+                label = { Text("Password") },
+                visualTransformation = PasswordVisualTransformation(),
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth()
             )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            androidx.compose.material3.Button(
+                onClick = {
+                    if (isLogin) authViewModel.signIn(email, password) else authViewModel.signUp(email, password)
+                },
+                enabled = authState !is AuthState.Loading,
+                modifier = Modifier.fillMaxWidth(),
+                colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF41B8C9),
+                    contentColor = Color.White
+                )
+            ) {
+                if (authState is AuthState.Loading) {
+                    CircularProgressIndicator(
+                        color = Color.White,
+                        modifier = Modifier.size(20.dp)
+                    )
+                } else {
+                    Text(if (isLogin) "Sign In" else "Sign Up")
+                }
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            TextButton(
+                onClick = { isLogin = !isLogin }
+            ) {
+                Text(
+                    if (isLogin) "Don't have an account? Sign Up"
+                    else "Already have an account? Sign In",
+                    color = Color(0xFF41B8C9)
+                )
+            }
+
+            errorMessage?.let { error ->
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(
+                    text = error,
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodySmall
+                )
+            }
         }
     }
 }
+

@@ -21,6 +21,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Logout
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -92,7 +94,22 @@ fun ChatScreen(
                     color = Color.Black,
                     fontSize = 22.sp
                 )
-            }
+
+            IconButton(
+                onClick = {
+                    authViewModel.signOut()
+                },
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(end = 8.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Logout,
+                    contentDescription = "Sign Out",
+                    tint = Color.Black
+                )
+            }}
+
 
             LazyColumn(
                 state = listState,
