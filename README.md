@@ -48,7 +48,7 @@ Our app not only tracks your transactions and savings goals — it also features
 | 💽 Database     | Room Db |
 | 🧭 Navigation  | Navigation Compose |
 | 🧠 AI Assistant | Gemini Model (Google DeepMind) via OpenRouter |
-| 🔧 Networking  | OpenRouter API, Gemini  |
+| 🔧 Networking  | OpenRouter API, Gemini, okHttp, Retrofit |
 | 🧰 Other       | ViewModel, StateFlow, Coroutines |
 ---
 
