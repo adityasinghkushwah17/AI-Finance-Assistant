@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1007848545736",
+    "project_id": "financebuddy-dea48",
+    "storage_bucket": "financebuddy-dea48.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007848545736:android:a5db58e5c7aa30e2f6b4fd",
+        "android_client_info": {
+          "package_name": "com.adityacodes.financebuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByxn6IqfkFxQ5_ai5RUOYLNts1_PSm0ek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
