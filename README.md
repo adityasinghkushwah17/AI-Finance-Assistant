@@ -31,10 +31,10 @@ Our app not only tracks your transactions and savings goals — it also features
 ---
 
 <p float="left">
-  <img src="https://github.com/adityasinghkushwah17/AI-Finance-Assistant/blob/master/photo_2025-06-26_19-23-53.jpg?raw=true" width="25%" />
-  <img src="https://github.com/adityasinghkushwah17/AI-Finance-Assistant/blob/master/photo_2025-06-26_19-17-30.jpg?raw=true" width="25%" />
-  <img src="https://github.com/adityasinghkushwah17/AI-Finance-Assistant/blob/master/photo_2025-06-26_19-17-36.jpg?raw=true" width="25%" />
-  <img src="https://github.com/adityasinghkushwah17/AI-Finance-Assistant/blob/master/photo_2025-06-26_19-17-43.jpg?raw=true" width="25%" />
+  <img src="https://github.com/adityasinghkushwah17/AI-Finance-Assistant/blob/master/photo_2025-06-26_19-23-53.jpg?raw=true" width="24%" />
+  <img src="https://github.com/adityasinghkushwah17/AI-Finance-Assistant/blob/master/photo_2025-06-26_19-17-30.jpg?raw=true" width="24%" />
+  <img src="https://github.com/adityasinghkushwah17/AI-Finance-Assistant/blob/master/photo_2025-06-26_19-17-36.jpg?raw=true" width="24%" />
+  <img src="https://github.com/adityasinghkushwah17/AI-Finance-Assistant/blob/master/photo_2025-06-26_19-17-43.jpg?raw=true" width="24%" />
 </p>
 
 ## 🛠️ Tech Stack
